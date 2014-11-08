@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-MAINTAINER Federico Gimenez Nieto <federico.gimenez@coit.es>
+MAINTAINER Federico Gimenez Nieto <fgimenez@coit.es>
 
 # Install packages: wget, git, mercurial and emacs
 RUN apt-get update && \
@@ -12,12 +12,16 @@ RUN wget http://golang.org/dl/go1.3.3.linux-amd64.tar.gz && \
     tar -C /usr/local -xzf go1.3.3.linux-amd64.tar.gz && \
     rm go1.3.3.linux-amd64.tar.gz
 
-# Add the Go executables to our path
+# Set the path
 ENV PATH $PATH:/usr/local/go/bin:/workspace/bin
 
 # Create a Go workspace directory
 RUN mkdir -p /workspace/bin /workspace/pkg /workspace/src
 
-WORKDIR /workspace
 ENV GOPATH /workspace
 ENV GOROOT /usr/local/go
+
+# install godep
+RUN go get github.com/tools/godep && \
+    go get github.com/nsf/gocode && \
+    go get code.google.com/p/go.tools/cmd/goimports
