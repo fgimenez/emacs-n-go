@@ -21,7 +21,12 @@ RUN mkdir -p /workspace/bin /workspace/pkg /workspace/src
 ENV GOPATH /workspace
 ENV GOROOT /usr/local/go
 
-# install godep
+# install go packages
 RUN go get github.com/tools/godep && \
     go get github.com/nsf/gocode && \
     go get code.google.com/p/go.tools/cmd/goimports
+
+# clone emacs conf
+RUN git clone https://github.com/fgimenez/.emacs.d.git
+
+ENTRYPOINT /usr/bin/emacs
