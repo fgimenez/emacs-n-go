@@ -13,12 +13,12 @@ RUN wget http://golang.org/dl/go1.3.3.linux-amd64.tar.gz && \
     rm go1.3.3.linux-amd64.tar.gz
 
 # Set the path
-ENV PATH $PATH:/usr/local/go/bin:/workspace/go/bin
+ENV PATH $PATH:/usr/local/go/bin:/workspace/bin
 
 # Create a Go workspace directory
-RUN mkdir -p /workspace/go/bin /workspace/go/pkg /workspace/go/src
+RUN mkdir -p /workspace/bin /workspace/pkg /workspace/src
 
-ENV GOPATH /workspace/go
+ENV GOPATH /workspace
 ENV GOROOT /usr/local/go
 
 # install go packages
