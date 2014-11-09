@@ -27,6 +27,8 @@ RUN go get github.com/tools/godep && \
     go get code.google.com/p/go.tools/cmd/goimports
 
 # clone emacs conf
-RUN git clone https://github.com/fgimenez/.emacs.d.git /root/.emacs.d
+RUN git clone https://github.com/fgimenez/.emacs.d.git /root/.emacs.d && \
+    cd /root/.emacs.d && \
+    git checkout origin/go
 
-ENTRYPOINT /usr/bin/emacs
+ENTRYPOINT /usr/bin/emacs /workspace/src
