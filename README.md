@@ -11,5 +11,7 @@ If your go source files reside at `/path/to/go/src` then You can spin up the con
 Happy coding!
 
 [1] http://golang.org/doc/code.html
+
 [2] https://registry.hub.docker.com/u/tmrudick/go/
+
 [3] http://tleyden.github.io/blog/2014/05/22/configure-emacs-as-a-go-editor-from-scratch/
