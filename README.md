@@ -6,7 +6,7 @@ This is based on the go dev container at [2] and the configuration of emacs for 
 
 If your go source files reside at `/path/to/go/src` then You can spin up the container with:
 
-    docker run -v ~/path/to/go/src:/workspace/src -i -t fgimenez/emacs-n-go
+    docker run -v /path/to/go/src:/workspace/src -i -t fgimenez/emacs-n-go
 
 Happy coding!
 
