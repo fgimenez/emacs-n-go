@@ -8,9 +8,9 @@ RUN apt-get update && \
     apt-get clean
 
 # Download and install the Go
-RUN wget http://golang.org/dl/go1.3.3.linux-amd64.tar.gz && \
-    tar -C /usr/local -xzf go1.3.3.linux-amd64.tar.gz && \
-    rm go1.3.3.linux-amd64.tar.gz
+RUN wget http://golang.org/dl/go1.4.linux-amd64.tar.gz && \
+    tar -C /usr/local -xzf go1.4.linux-amd64.tar.gz && \
+    rm go1.4.linux-amd64.tar.gz
 
 # Set the path
 ENV PATH $PATH:/usr/local/go/bin:/workspace/bin
