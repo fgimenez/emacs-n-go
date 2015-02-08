@@ -22,10 +22,11 @@ ENV GOPATH /workspace
 ENV GOROOT /usr/local/go
 
 # install go packages
-RUN go get github.com/tools/godep && \
-    go get github.com/nsf/gocode && \
-    go get code.google.com/p/go.tools/cmd/goimports && \
-    go get github.com/golang/lint/golint
+RUN go get -u github.com/tools/godep && \
+    go get -u github.com/nsf/gocode && \
+    go get -u code.google.com/p/go.tools/cmd/goimports && \
+    go get -u github.com/golang/lint/golint && \
+    go get -u code.google.com/p/rog-go/exp/cmd/godef
 
 # clone emacs conf
 RUN git clone https://github.com/fgimenez/.emacs.d.git /root/.emacs.d && \
