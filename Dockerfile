@@ -24,7 +24,8 @@ ENV GOROOT /usr/local/go
 # temporary fix for 9fans
 RUN mkdir -p /tmp/9fans.net && \
     git clone https://github.com/9fans/go /tmp/9fans.net/go && \
-    mv /tmp/9fans.net $GOPATH/src
+    mv /tmp/9fans.net $GOPATH/src && \
+    go install 9fans.net/go/acme
 
 # install go packages
 RUN go get -u -v github.com/tools/godep && \
@@ -38,4 +39,4 @@ RUN git clone https://github.com/fgimenez/.emacs.d.git /root/.emacs.d && \
     cd /root/.emacs.d && \
     git checkout origin/go
 
-ENTRYPOINT /usr/bin/emacs /workspace/src
+ENTRYPOINT /usr/bin/emacs /workspace/src/user
