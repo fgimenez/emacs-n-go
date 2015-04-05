@@ -1,6 +1,6 @@
 This container is meant to run an emacs version configured for GoLang development.
 
-It downloads the binaries (1.4.1) and sets up all the required directory structure and environment variables as described in [1] in ubuntu14.04.
+It downloads the binaries (1.4.2) and sets up all the required directory structure and environment variables as described in [1] in ubuntu14.04.
 
 This is based on the go dev container at [2] and the configuration of emacs for go development at [3], thank you guys!
 
