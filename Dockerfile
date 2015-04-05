@@ -30,7 +30,7 @@ RUN mkdir -p /tmp/9fans.net && \
 # install go packages
 RUN go get -u -v github.com/tools/godep && \
     go get -u -v github.com/nsf/gocode && \
-    go get -u -v code.google.com/p/go.tools/cmd/goimports && \
+    go get -u -v golang.org/x/tools/cmd/goimports && \
     go get -u -v github.com/golang/lint/golint && \
     go get -u -v github.com/rogpeppe/godef
 
