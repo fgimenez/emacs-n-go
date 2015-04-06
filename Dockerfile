@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-MAINTAINER Federico Gimenez Nieto <fgimenez@coit.es>
+MAINTAINER Federico Gimenez <fgimenez@coit.es>
 
 # Install packages: wget, git, mercurial and emacs
 RUN apt-get update && \
@@ -34,9 +34,17 @@ RUN go get -u -v github.com/tools/godep && \
     go get -u -v github.com/golang/lint/golint && \
     go get -u -v github.com/rogpeppe/godef
 
+# container user
+RUN groupadd -f -g 100 dummy && \
+    useradd -s /bin/bash -u 1000 -g users dummy && \
+    mkdir -p /home/dummy && \
+    chown -R dummy:dummy /home/dummy
+
 # clone emacs conf
-RUN git clone https://github.com/fgimenez/.emacs.d.git /root/.emacs.d && \
-    cd /root/.emacs.d && \
+RUN git clone https://github.com/fgimenez/.emacs.d.git /home/dummy/.emacs.d && \
+    cd /home/dummy/.emacs.d && \
     git checkout origin/go
 
-ENTRYPOINT /usr/bin/emacs /workspace/src/user
+USER dummy
+
+ENTRYPOINT /usr/bin/emacs /workspace/src
