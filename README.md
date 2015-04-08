@@ -4,7 +4,7 @@ It downloads the binaries (1.4.2) and sets up all the required directory structu
 
 This is based on the go dev container at [2] and the configuration of emacs for go development at [3], thank you guys!
 
-If your go source files reside at `/path/to/go/src` then You can spin up the container with:
+If your go source files reside at `/path/to/go/src` then you can spin up the container with:
 
     docker run -v /path/to/go/src:/workspace/src/github.com/myuser/myproject -i -t fgimenez/emacs-n-go
 
