@@ -38,7 +38,7 @@ RUN go get -u -v github.com/tools/godep && \
 RUN groupadd -f -g 100 dummy && \
     useradd -s /bin/bash -u 1000 -g users dummy && \
     mkdir -p /home/dummy && \
-    chown -R dummy:dummy /home/dummy
+    chown -R dummy:dummy /home/dummy /workspace
 
 # clone emacs conf
 RUN git clone https://github.com/fgimenez/.emacs.d.git /home/dummy/.emacs.d && \
