@@ -32,7 +32,8 @@ RUN go get -u -v github.com/tools/godep && \
     go get -u -v github.com/nsf/gocode && \
     go get -u -v golang.org/x/tools/cmd/goimports && \
     go get -u -v github.com/golang/lint/golint && \
-    go get -u -v github.com/rogpeppe/godef
+    go get -u -v github.com/rogpeppe/godef && \
+    go get -u -v github.com/smartystreets/goconvey
 
 # container user
 RUN groupadd -f -g 100 dummy && \
@@ -46,5 +47,3 @@ RUN git clone https://github.com/fgimenez/.emacs.d.git /home/dummy/.emacs.d && \
     git checkout origin/go
 
 USER dummy
-
-ENTRYPOINT /usr/bin/emacs /workspace/src
