@@ -4,7 +4,7 @@ MAINTAINER Federico Gimenez <fgimenez@canonical.com>
 
 # Install packages: wget, git, mercurial and emacs
 RUN apt-get update && \
-    apt-get install -y wget git mercurial emacs24-nox && \
+    apt-get install -y wget git mercurial emacs24-nox bzr && \
     apt-get clean
 
 # Download and install the Go
