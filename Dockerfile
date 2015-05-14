@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-MAINTAINER Federico Gimenez <fgimenez@coit.es>
+MAINTAINER Federico Gimenez <fgimenez@canonical.com>
 
 # Install packages: wget, git, mercurial and emacs
 RUN apt-get update && \
@@ -33,8 +33,9 @@ RUN go get -u -v github.com/tools/godep && \
     go get -u -v golang.org/x/tools/cmd/goimports && \
     go get -u -v github.com/golang/lint/golint && \
     go get -u -v github.com/rogpeppe/godef && \
-    go get -u -v github.com/smartystreets/goconvey
-
+    go get -u -v github.com/smartystreets/goconvey && \
+    go get -u -v launchpad.net/godeps
+  
 # container user
 RUN groupadd -f -g 100 dummy && \
     useradd -s /bin/bash -u 1000 -g users dummy && \
