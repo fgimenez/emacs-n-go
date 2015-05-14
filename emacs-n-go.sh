@@ -13,7 +13,7 @@ else
 fi
 
 if [ -f $HOST_DIR/dependencies.tsv ]; then
-    INSTALL_DEP_CMD="godeps -u dependencies.tsv && "
+    INSTALL_DEP_CMD="godeps -u dependencies.tsv >> /dev/null 2>&1 && "
 fi
 
 create_cmd(){

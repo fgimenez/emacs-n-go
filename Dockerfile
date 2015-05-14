@@ -1,10 +1,10 @@
-FROM ubuntu:14.04
+FROM ubuntu:15.04
 
 MAINTAINER Federico Gimenez <fgimenez@canonical.com>
 
 # Install packages: wget, git, mercurial and emacs
 RUN apt-get update && \
-    apt-get install -y wget git mercurial emacs24-nox bzr && \
+    apt-get install -y wget git mercurial emacs24-nox bzr build-essential && \
     apt-get clean
 
 # Download and install the Go
