@@ -16,6 +16,8 @@ If executed without arguments takes the current directory as source and github.c
 
     ./emacs-n-go.sh
 
+If your project includes a `dependencies.tsv` file those dependencies will be installed by godeps when the container is launched.
+
 Happy coding!
 
 [1] http://golang.org/doc/code.html
