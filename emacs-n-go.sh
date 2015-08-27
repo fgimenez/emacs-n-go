@@ -12,12 +12,8 @@ else
     exit -1
 fi
 
-if [ -f $HOST_DIR/dependencies.tsv ]; then
-    INSTALL_DEP_CMD="godeps -u dependencies.tsv >> /dev/null 2>&1 && "
-fi
-
 create_cmd(){
-    echo "'cd $TARGET_DIR && $INSTALL_DEP_CMD /workspace/bin/goconvey -host=0.0.0.0 >> /dev/null & 2>&1 && /usr/bin/emacs $TARGET_DIR'"
+    echo "'cd $TARGET_DIR && /workspace/bin/goconvey -host=0.0.0.0 >> /dev/null & 2>&1 && /usr/bin/emacs $TARGET_DIR'"
 }
 
 eval sudo docker run \

@@ -8,9 +8,9 @@ RUN apt-get update && \
     apt-get clean
 
 # Download and install the Go
-RUN wget http://golang.org/dl/go1.4.2.linux-amd64.tar.gz && \
-    tar -C /usr/local -xzf go1.4.2.linux-amd64.tar.gz && \
-    rm go1.4.2.linux-amd64.tar.gz
+RUN wget http://golang.org/dl/go1.5.linux-amd64.tar.gz && \
+    tar -C /usr/local -xzf go1.5.linux-amd64.tar.gz && \
+    rm go1.5.linux-amd64.tar.gz
 
 # Set the path
 ENV PATH $PATH:/usr/local/go/bin:/workspace/bin
@@ -33,8 +33,7 @@ RUN go get -u -v github.com/tools/godep && \
     go get -u -v golang.org/x/tools/cmd/goimports && \
     go get -u -v github.com/golang/lint/golint && \
     go get -u -v github.com/rogpeppe/godef && \
-    go get -u -v github.com/smartystreets/goconvey && \
-    go get -u -v launchpad.net/godeps
+    go get -u -v github.com/smartystreets/goconvey
   
 # container user
 RUN groupadd -f -g 100 dummy && \
