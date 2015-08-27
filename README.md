@@ -1,10 +1,10 @@
 This container is meant to run an emacs version configured for GoLang development.
 
-It downloads the binaries (1.4.2) and sets up all the required directory structure and environment variables as described in [1] in ubuntu14.04.
+It downloads the binaries (1.5) and sets up all the required directory structure and environment variables as described in [1] in ubuntu14.04.
 
 This is based on the go dev container at [2] and the configuration of emacs for go development at [3], thank you guys!
 
-It includes godep, godeps, gocode, goimports, golint, godef and goconvey. If your go source files reside at `/path/to/go/src` then you can spin up the container with:
+It includes godep, gocode, goimports, golint, godef and goconvey. If your go source files reside at `/path/to/go/src` then you can spin up the container with:
 
     docker run -v /path/to/go/src:/workspace/src/github.com/myuser/myproject -i -t fgimenez/emacs-n-go /usr/bin/emacs
 
@@ -15,8 +15,6 @@ You can also use the `emacs-n-go.sh` script, which spins a goconvey server in `h
 If executed without arguments takes the current directory as source and github.com/$USER/<current directory basename> as package
 
     ./emacs-n-go.sh
-
-If your project includes a `dependencies.tsv` file those dependencies will be installed by godeps when the container is launched.
 
 Happy coding!
 
